@@ -1,6 +1,6 @@
 import React, {Component } from 'react';
 import { Card, CardImg, CardBody, CardTitle, CardText } from 'reactstrap';
-//import {}
+
 
 class DishDetail extends Component{
      constructor(props){
@@ -24,8 +24,10 @@ class DishDetail extends Component{
            return(
                dish.comments.map((comment) =>(
                     <li key ={comment.id}>
-                        <p>{comment.comment}</p>
-                        <p>--{comment.author} {comment.date}</p>
+                        <p>{comment.comment} </p>
+                        <p>--{comment.author} 
+                        {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
+                        </p>
                     </li>
                ))
            );
