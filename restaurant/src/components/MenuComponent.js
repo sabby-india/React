@@ -18,10 +18,10 @@ class Menu extends Component {
             return (
                 <div key={dish.id} className="col-12 col-md-5 m-1" >
                     <Card key={dish.id} >
-                  <CardImg width="100%" src={dish.image} alt={dish.name} />
-                  <CardImgOverlay>
-                      <CardTitle>{dish.name}</CardTitle>
-                  </CardImgOverlay>
+                        <CardImg width="100%" src={dish.image} alt={dish.name} />
+                        <CardImgOverlay>
+                            <CardTitle>{dish.name}</CardTitle>
+                        </CardImgOverlay>
                 </Card>
                 </div>
             );
