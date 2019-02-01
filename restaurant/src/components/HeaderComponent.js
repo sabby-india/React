@@ -20,7 +20,7 @@ class Header extends Component{
     render(){
         return(
                 <div>
-                    <Navbar light expand="md" >
+                    <Navbar color="faded" light expand="md" >
                         <div className="container">
                             <NavbarBrand className="mr-auto" href="/">
                             <img src='assets/images/logo.jpg' height="30" width="41" alt="Restaurant Century" />

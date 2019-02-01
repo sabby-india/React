@@ -8,11 +8,7 @@ class Menu extends Component {
         this.state = {
             selectedDish: null
         }
-    }
-
-    
-
-   
+    }   
     render(){
         const menu = this.props.dishes.map((dish) => {
             return (

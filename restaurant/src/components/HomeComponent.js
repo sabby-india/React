@@ -1,5 +1,9 @@
 import React, {Component } from 'react';
 import { Card, CardBody, CardTitle, CardSubtitle, CardImg ,CardText } from 'reactstrap';
+let imgStyle = {
+  maxHeight: '300px',
+  //maxWidth: '128px'
+}
 
 class Home extends Component {
     constructor(props){
@@ -12,7 +16,7 @@ class Home extends Component {
         return(
           
           <Card>
-              <CardImg src={item.image} alt={item.name} />
+              <CardImg object style={imgStyle} src={item.image} alt={item.name} />
               <CardBody>
               <CardTitle>{item.name}</CardTitle>
               {item.designation ? <CardSubtitle>{item.designation}</CardSubtitle> : null }
