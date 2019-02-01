@@ -1,6 +1,6 @@
 import React, {Component } from 'react';
-import { Card, CardImg, CardBody, CardTitle, CardText } from 'reactstrap';
-
+import { Card, CardImg, CardBody, CardTitle, CardText,Breadcrumb,BreadcrumbItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 class DishDetail extends Component{
      constructor(props){
@@ -19,10 +19,10 @@ class DishDetail extends Component{
             );
         }
     }
-    renderComments(dish){
-        if(dish != null){      
+    renderComments(comments){
+        if(comments != null){      
            return(
-               dish.comments.map((comment) =>(
+               comments.map((comment) =>(
                     <li key ={comment.id}>
                         <p>{comment.comment} </p>
                         <p>--{comment.author} 
@@ -46,7 +46,14 @@ class DishDetail extends Component{
          return(
               
              <div className="container">
-                <div className="row">         
+                <div className="row">
+                    <Breadcrumb>
+                        <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>{this.props.dish.name}</BreadcrumbItem>
+                    </Breadcrumb>
+                </div>              
+                <div className="row">  
+                   
                     <div className="col-12 col-md-5  m-1">
                         {this.renderDish(this.props.dish)}
                     </div>
@@ -54,7 +61,7 @@ class DishDetail extends Component{
                     
                         <h4>Comments</h4>
                             <ul class="list-unstyled">                                
-                                {this.renderComments(this.props.dish)}
+                                {this.renderComments(this.props.comments)}
                             </ul>
                       
                     </div>
